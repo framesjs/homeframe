@@ -1,0 +1,49 @@
+
+[2K[1G[2m$ next build[22m
+  [1m[38;2;173;127;168m ▲ Next.js 14.1.0[39m[22m
+   - Environments: .env
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+ [32m[1m✓[22m[39m Compiled successfully
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G[?25h
+[36m./app/debug/components/frame-render.tsx[39m
+[33m13[39m:[33m18[39m  [33m[1mWarning[22m[39m: 'args' is defined but never used.  [90m[1mno-unused-vars[22m[39m
+[33m21[39m:[33m9[39m  [33m[1mWarning[22m[39m: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [90m[1m@next/next/no-img-element[22m[39m
+
+[36m./app/debug/page.tsx[39m
+[33m4[39m:[33m10[39m  [33m[1mWarning[22m[39m: 'useSearchParams' is defined but never used.  [90m[1mno-unused-vars[22m[39m
+[33m19[39m:[33m64[39m  [33m[1mWarning[22m[39m: 'logout' is assigned a value but never used.  [90m[1mno-unused-vars[22m[39m
+
+[36m./app/debug/signer/route.ts[39m
+[33m26[39m:[33m46[39m  [33m[1mWarning[22m[39m: 'res' is defined but never used.  [90m[1mno-unused-vars[22m[39m
+
+[36m./app/page.tsx[39m
+[33m60[39m:[33m9[39m  [33m[1mWarning[22m[39m: 'imageSvg' is assigned a value but never used.  [90m[1mno-unused-vars[22m[39m
+
+[36minfo[39m  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Linting and checking validity of types     [32m[1m✓[22m[39m Linting and checking validity of types 
+[?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
+[?25l [37m[1m [22m[39m Generating static pages (0/10)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/10)  [36m[=   ][39m  [37m[1m [22m[39m Generating static pages (5/10) 
+[2K[1G[1A[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (10/10) 
+[?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
+[2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
+
+[4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
+┌ λ /                                    6.93 kB        [37m[1m91.1 kB[22m[39m
+├ ○ /_not-found                          885 B          [37m[1m85.1 kB[22m[39m
+├ λ /debug                               1.1 MB         [37m[1m1.19 MB[22m[39m
+├ λ /debug/frame-action                  0 B                [37m[1m0 B[22m[39m
+├ λ /debug/og                            0 B                [37m[1m0 B[22m[39m
+├ ○ /debug/redirect                      339 B          [37m[1m84.5 kB[22m[39m
+├ λ /debug/signer                        0 B                [37m[1m0 B[22m[39m
+└ λ /frames                              0 B                [37m[1m0 B[22m[39m
++ First Load JS shared by all            [37m[1m84.2 kB[22m[39m
+  ├ chunks/1dd3208c-f39f92530df1b77c.js  53.4 kB
+  ├ chunks/997-bf4f78b2c6223c5c.js       29 kB
+  └ other shared chunks (total)          1.87 kB
+
+
+○  (Static)   prerendered as static content
+λ  (Dynamic)  server-rendered on demand using Node.js
+
+[?25h
