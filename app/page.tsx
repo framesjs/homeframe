@@ -51,7 +51,7 @@ export default async function Home({
   // then, when done, return next frame
   return (
     <div>
-      <a href="https://framesjs.org">Framesjs</a> Homeframe{" "}
+      <a href="https://framesjs.org">frames.js</a> homeframe{" "}
       {process.env.NODE_ENV === "development" ? (
         <Link href="/debug">Debug</Link>
       ) : null}
