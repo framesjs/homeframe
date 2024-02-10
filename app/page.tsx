@@ -40,9 +40,9 @@ export default async function Home({
 }) {
   const previousFrame = getPreviousFrame<State>(searchParams);
 
-  // const validMessage = await validateActionSignature(previousFrame.postBody, {
-  //   hubHttpUrl: "https://hub.freefarcasterhub.com:3281",
-  // });
+  // const validMessage = await validateActionSignature(previousFrame.postBody);
+
+  // console.log(validMessage);
 
   const [state, dispatch] = useFramesReducer<State>(
     reducer,
