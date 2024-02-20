@@ -63,14 +63,14 @@ export default async function Home({
         <FrameImage
           src={
             state.page === 1
-              ? "http://framesjs.org/og.png"
-              : `http://framesjs.org/frames/frame${state.page}.png`
+              ? "https://framesjs.org/og.png"
+              : `https://framesjs.org/frames/frame${state.page}.png`
           }
         />
         {state.page !== 1 ? (
           <FrameButton>←</FrameButton>
         ) : (
-          <FrameButton action="link" target="http://framesjs.org/">
+          <FrameButton action="link" target="https://framesjs.org/">
             Open docs
           </FrameButton>
         )}
