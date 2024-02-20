@@ -2,11 +2,9 @@ import {
   FrameButton,
   FrameContainer,
   FrameImage,
-  FrameInput,
   FrameReducer,
   getPreviousFrame,
   useFramesReducer,
-  validateActionSignature,
 } from "frames.js/next/server";
 import Link from "next/link";
 
@@ -70,12 +68,18 @@ export default async function Home({
           }
         />
         {state.page !== 1 ? (
-          <FrameButton onClick={dispatch}>←</FrameButton>
-        ) : null}
-        {state.page < 6 ? (
-          <FrameButton onClick={dispatch}>→</FrameButton>
+          <FrameButton>←</FrameButton>
         ) : (
-          <FrameButton href="https://framesjs.org">Open frames.js</FrameButton>
+          <FrameButton action="link" target="http://framesjs.org/">
+            Open docs
+          </FrameButton>
+        )}
+        {state.page < 6 ? (
+          <FrameButton>→</FrameButton>
+        ) : (
+          <FrameButton action="link" target="https://framesjs.org">
+            Open frames.js
+          </FrameButton>
         )}
       </FrameContainer>
     </div>
