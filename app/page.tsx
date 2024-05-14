@@ -1,87 +1,32 @@
-import {
-  FrameButton,
-  FrameContainer,
-  FrameImage,
-  FrameReducer,
-  getPreviousFrame,
-  useFramesReducer,
-} from "frames.js/next/server";
+import { fetchMetadata } from "frames.js/next";
+import { Metadata } from "next";
 import Link from "next/link";
+import { appURL } from "./utils";
 
-type State = {
-  page: number;
-};
-
-const initialState = { page: 1 };
-
-const reducer: FrameReducer<State> = (state, action) => {
-  const buttonIndex = action.postBody?.untrustedData.buttonIndex;
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    page:
-      state.page === 1 && buttonIndex === 1
-        ? 2
-        : buttonIndex === 1
-        ? state.page - 1
-        : buttonIndex === 2
-        ? state.page + 1
-        : 1,
+    title: "New api example",
+    description: "This is a new api example",
+    other: {
+      ...(await fetchMetadata(new URL("/frames", appURL()))),
+    },
   };
-};
+}
 
-const lastPage = 6;
+function DebugLink() {
+  const debugUrl = new URL("http://localhost:3010");
+
+  debugUrl.searchParams.set("url", appURL());
+
+  return <Link href={debugUrl.toString()}>Debug</Link>;
+}
 
 // This is a react server component only
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Record<string, string>;
-}) {
-  const previousFrame = getPreviousFrame<State>(searchParams);
-
-  // const validMessage = await validateActionSignature(previousFrame.postBody);
-
-  // console.log(validMessage);
-
-  const [state, dispatch] = useFramesReducer<State>(
-    reducer,
-    initialState,
-    previousFrame
-  );
-
-  // then, when done, return next frame
+export default async function Home() {
   return (
     <div>
       <a href="https://framesjs.org">frames.js</a> homeframe{" "}
-      {process.env.NODE_ENV === "development" ? (
-        <Link href="/debug">Debug</Link>
-      ) : null}
-      <FrameContainer
-        postUrl="/frames"
-        state={state}
-        previousFrame={previousFrame}
-      >
-        <FrameImage
-          src={
-            state.page === 1
-              ? "https://framesjs.org/og.png"
-              : `https://framesjs.org/frames/frame${state.page}.png`
-          }
-        />
-        {state.page !== 1 ? (
-          <FrameButton>←</FrameButton>
-        ) : (
-          <FrameButton action="link" target="https://framesjs.org/">
-            Open docs
-          </FrameButton>
-        )}
-        {state.page < 6 ? (
-          <FrameButton>→</FrameButton>
-        ) : (
-          <FrameButton action="link" target="https://framesjs.org">
-            Open frames.js
-          </FrameButton>
-        )}
-      </FrameContainer>
+      {process.env.NODE_ENV === "development" ? <DebugLink /> : null}
     </div>
   );
 }
