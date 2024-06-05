@@ -4,18 +4,7 @@ import { frames } from "./frames";
 const lastPage = 6;
 
 const pageHandler = frames(async (ctx) => {
-  let page = ctx.state.page;
-
-  if ("action" in ctx.searchParams) {
-    switch (ctx.searchParams.action) {
-      case "prev":
-        page = Math.max(1, page - 1);
-        break;
-      case "next":
-        page = Math.min(lastPage, page + 1);
-        break;
-    }
-  }
+  const page = parseInt(ctx.searchParams.page || "1");
 
   return {
     image:
@@ -24,7 +13,10 @@ const pageHandler = frames(async (ctx) => {
         : `https://framesjs.org/frames/frame${page}.png`,
     buttons: [
       page !== 1 ? (
-        <Button action="post" target={{ query: { action: "prev" } }}>
+        <Button
+          action="post"
+          target={{ query: { page: Math.max(1, page - 1) } }}
+        >
           ←
         </Button>
       ) : (
@@ -33,7 +25,10 @@ const pageHandler = frames(async (ctx) => {
         </Button>
       ),
       page < lastPage ? (
-        <Button action="post" target={{ query: { action: "next" } }}>
+        <Button
+          action="post"
+          target={{ query: { page: Math.min(lastPage, page + 1) } }}
+        >
           →
         </Button>
       ) : (
@@ -42,9 +37,6 @@ const pageHandler = frames(async (ctx) => {
         </Button>
       ),
     ],
-    state: {
-      page: page,
-    },
   };
 });
 
