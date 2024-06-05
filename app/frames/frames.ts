@@ -1,30 +1,46 @@
+import { ClientProtocolHandler, openframes } from "frames.js/middleware";
 import { createFrames } from "frames.js/next";
-import { openframes } from "frames.js/middleware";
-import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp";
+
+const untrustedDataHandler: ClientProtocolHandler<{
+  buttonIndex: any;
+  state: any;
+}> = {
+  isValidPayload(body) {
+    const rawBody = body as any;
+    return rawBody.untrustedData && rawBody.untrustedData.buttonIndex;
+  },
+  async getFrameMessage(body) {
+    const rawBody = body as any;
+    return {
+      buttonIndex: rawBody.untrustedData.buttonIndex,
+      state: rawBody.untrustedData.state,
+    };
+  },
+};
 
 export const frames = createFrames({
   basePath: "/frames",
-  initialState: {
-    page: 1,
-  },
   middleware: [
     openframes({
       clientProtocol: {
         id: "xmtp",
         version: "2024-02-09",
       },
-      handler: {
-        isValidPayload: (body: JSON) => isXmtpFrameActionPayload(body),
-        getFrameMessage: async (body: JSON) => {
-          if (!isXmtpFrameActionPayload(body)) {
-            return undefined;
-          }
-
-          const result = await getXmtpFrameMessage(body);
-
-          return { ...result };
-        },
+      handler: untrustedDataHandler,
+    }),
+    openframes({
+      clientProtocol: {
+        id: "lens",
+        version: "1.0.0",
       },
+      handler: untrustedDataHandler,
+    }),
+    openframes({
+      clientProtocol: {
+        id: "*",
+        version: "*",
+      },
+      handler: untrustedDataHandler,
     }),
   ],
 });

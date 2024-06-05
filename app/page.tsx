@@ -5,8 +5,8 @@ import { appURL } from "./utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "New api example",
-    description: "This is a new api example",
+    title: "frames.js",
+    description: "frames.js is the fastest way to make Frames",
     other: {
       ...(await fetchMetadata(new URL("/frames", appURL()))),
     },
